@@ -1,7 +1,6 @@
 backup/
 data/
 scripts/
-list.txt
 
 # Editor directories and files
 .vscode/*
