@@ -9,7 +9,7 @@ This is a Postman Collection for the [GameBanana](https://gamebanana.com/) API v
 
 # How to contribute
 
-1. Fork the collection
+1. Fork the [collection](https://www.postman.com/s0nought/workspace/gb-api-v11)
 1. Create PR
 
 See [Forking Postman entities](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/)
