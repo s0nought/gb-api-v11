@@ -5,7 +5,7 @@
 		"description": "This is a Postman Collection for the [GameBanana](https://gamebanana.com/) API v11 endpoints.\n\n[GitHub](https://github.com/s0nought/gb-api-v11)\n\n## How to install\n\nSee [Forking Postman entities](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18847363",
-		"_collection_link": "https://www.postman.com/s0nought/workspace/gbapi-v11/collection/18847363-a9acf7ee-5856-4c45-8af6-d49b5f89e1c2?action=share&creator=18847363&source=collection_link"
+		"_collection_link": "https://www.postman.com/s0nought/workspace/gb-api-v11/collection/18847363-a9acf7ee-5856-4c45-8af6-d49b5f89e1c2?action=share&creator=18847363&source=collection_link"
 	},
 	"item": [
 		{
@@ -1373,12 +1373,12 @@
 										{
 											"key": "_idGameRow",
 											"value": "",
-											"description": "Enter the game ID.\n\nAllowed values: valid game IDs.",
+											"description": "Narrow down the search to a specific Game's ID.",
 											"disabled": true
 										}
 									]
 								},
-								"description": "StartFragment\n\nThis endpoint returns a list of suggested search queries for the provided search string."
+								"description": "This endpoint returns a list of suggested search queries for the provided search string."
 							},
 							"response": [
 								{
@@ -1410,7 +1410,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1456,7 +1456,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1529,7 +1529,7 @@
 										{
 											"key": "_idGameRow",
 											"value": "",
-											"description": "Enter the game ID.\n\nAllowed values: valid game IDs.",
+											"description": "Narrow down the search to a specific Game's ID.",
 											"disabled": true
 										}
 									]
@@ -1586,7 +1586,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1652,7 +1652,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1718,7 +1718,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1784,7 +1784,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
@@ -1850,7 +1850,7 @@
 												{
 													"key": "_idGameRow",
 													"value": "4254",
-													"description": "Enter the game ID.\n\nAllowed values: valid game IDs."
+													"description": "Narrow down the search to a specific Game's ID."
 												}
 											]
 										}
