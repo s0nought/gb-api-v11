@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/s0nought/gb-api-v11/main/schemas/base/_agame.json",
+    "title": "_aGame",
+    "description": "/base/_agame",
+    "type": "object",
+    "properties": {
+        "_sName": {
+            "type": "string",
+            "minLength": 1
+        },
+        "_sProfileUrl": {
+            "type": "string",
+            "format": "uri"
+        },
+        "_sIconUrl": {
+            "type": "string",
+            "format": "uri"
+        }
+    },
+    "required": [
+        "_sName",
+        "_sProfileUrl",
+        "_sIconUrl"
+    ]
+}

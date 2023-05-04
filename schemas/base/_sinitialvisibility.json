@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/s0nought/gb-api-v11/main/schemas/base/_sinitialvisibility.json",
+    "title": "_sInitialVisibility",
+    "description": "/base/_sinitialvisibility",
+    "enum": [
+        "show",
+        "warn",
+        "hide"
+    ]
+}

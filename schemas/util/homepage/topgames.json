@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/s0nought/gb-api-v11/main/schemas/util/homepage/topgames.json",
+    "title": "TopGames",
+    "description": "https://gamebanana.com/apiv11/Util/Homepage/TopGames",
+    "type": "object",
+    "properties": {
+        "Trending": {
+            "$ref": "/schemas/gamearray"
+        },
+        "Classics": {
+            "$ref": "/schemas/gamearray"
+        },
+        "New": {
+            "$ref": "/schemas/gamearray"
+        }
+    },
+    "required": [
+        "Trending",
+        "Classics",
+        "New"
+    ],
+    "minProperties": 3,
+    "maxProperties": 3,
+    "$defs": {
+        "gamearray": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "/schemas/gamearray",
+            "title": "GameArray",
+            "description": "An array of Trending/Classics/New games",
+            "type": "array",
+            "items": {
+                "$ref": "/schemas/game"
+            },
+            "minItems": 1,
+            "maxItems": 10,
+            "uniqueItems": true
+        },
+        "game": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "/schemas/game",
+            "title": "Game",
+            "description": "A single item in the GameArray",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/s0nought/gb-api-v11/main/schemas/base/_agame.json"
+                }
+            ],
+            "properties": {
+                "_idRow": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                },
+                "_sBannerUrl": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "_aModCounts": {
+                    "type": "object",
+                    "minProperties": 0,
+                    "$comment": "key is a model name (e.g. Mod) and value is a number"
+                }
+            },
+            "required": [
+                "_idRow",
+                "_sName",
+                "_sProfileUrl",
+                "_sIconUrl",
+                "_sBannerUrl",
+                "_aModCounts"
+            ]
+        }
+    }
+}
