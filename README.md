@@ -1,4 +1,4 @@
-# About
+# gb-api-v11
 
 This is a Postman Collection for the [GameBanana](https://gamebanana.com/) API v11 endpoints.
 
