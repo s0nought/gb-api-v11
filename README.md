@@ -1,6 +1,6 @@
 # gb-api-v11
 
-This is a Postman Collection for the [GameBanana](https://gamebanana.com/) API v11 endpoints.
+This is a Postman Collection of [The unofficial GameBanana API v11 documentation](https://www.postman.com/s0nought/workspace/gb-api-v11/collection/18847363-a9acf7ee-5856-4c45-8af6-d49b5f89e1c2)
 
 # How to install
 
