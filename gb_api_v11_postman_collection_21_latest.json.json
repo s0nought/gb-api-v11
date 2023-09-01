@@ -2,10 +2,10 @@
 	"info": {
 		"_postman_id": "a9acf7ee-5856-4c45-8af6-d49b5f89e1c2",
 		"name": "gb-api-v11",
-		"description": "# About\n\nThe unofficial GameBanana API v11 documentation.\n\n## Basic terms and concepts\n\n**Submission** is a mod or mod-related content (e.g. blogs, concepts, news etc.)  \nBasically, anything hosted on GameBanana is a submission of some sort.\n\n**Section** is a distinct group of mods or mod-related content (e.g. scripts, tools etc.)\n\n#### Query Params format\n\n\\[oneOf\\] \\[Required\\] `DataType` `Description`  \nAllowed values: `Range`  \nDefault value: `Value`\n\nExample:\n\n```\nInteger. Page to get.\nAllowed values: >1\nDefault value: 1\n\n ```\n\n#### Pagination\n\n`responseBody._aMetadata._bIsComplete` is a Boolean value to indicate whether or not there is another page of results to get.\n\nExample:\n\n``` json\n{\n    \"_aMetadata\": {\n        \"_nRecordCount\": 1337,\n        \"_nPerpage\": 1,\n        \"_bIsComplete\": false\n    }\n}\n\n ```",
+		"description": "## About collection\n\nThe semi-official GameBanana API v11 documentation.\n\n## About GameBanana\n\n[GameBanana](https://gamebanana.com/) is the game modding community established in 2001. [Learn more.](https://gamebanana.com/wikis/1917)\n\nAuthenticated users can submit, download, like, subscribe to etc. game modifications (**mods**) and/or mod-related content (e.g. blogs, concepts, news etc.)\n\n## Basic terms and concepts\n\nFor simplicity sake, anything a user submits to GameBanana is called a `submission`.\n\nSubmissions are divided up into `sections` (e.g. skins, scripts, tools etc.)\n\n## Collection guidelines\n\n### Folders\n\nFolder name must:\n\n- Start with a noun\n- Be short and descriptive\n- Have a description\n\n### Requests\n\nRequest name must:\n\n- Start with \"\\[Auth\\]\" if it requires authentication\n- Start with the step number (e.g. \"1.\") if it is a part of the sequence\n\nRequest description must:\n\n- Describe response contents\n\nRequest examples must showcase:\n\n- HTTP 2xx\n- HTTP 4xx (if any)\n\n### Path variables\n\nPath variables must:\n\n- (Key) Be written in snake_case\n- (Value) Contain a valid example\n- (Description) Follow the format: \\[data type\\]. \\[description\\]\n\n### Query variables\n\nQuery variables must:\n\n- (Key) Be written in gb_case (see below)\n- (Value) Contain a valid example\n- (Description) Follow the format: \\[Required / Optional\\]. \\[data type\\]. \\[description\\]\n\n### gb_case\n\ne.g.: _csvProperties\n\n- underscore\n- data type\n- variable name in Pascal Case\n\n## APIs\n\n### Pagination\n\nTo paginate through APIs that return collections get `_aMetadata._bIsComplete`. If its value is `true`, there is another page to request.\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18847363",
-		"_collection_link": "https://www.postman.com/s0nought/workspace/gb-api-v11/collection/18847363-a9acf7ee-5856-4c45-8af6-d49b5f89e1c2?action=share&creator=18847363&source=collection_link"
+		"_collection_link": "https://www.postman.com/s0nought/workspace/gb-api-v11/collection/18847363-a9acf7ee-5856-4c45-8af6-d49b5f89e1c2?action=share&source=collection_link&creator=18847363"
 	},
 	"item": [
 		{
@@ -5255,50 +5255,6 @@
 			"description": "Game is an electronic game played on a personal computer or console or smartphone.\n\nTo browse games, go to [https://gamebanana.com/games](https://gamebanana.com/games)"
 		},
 		{
-			"name": "Ripe",
-			"item": [
-				{
-					"name": "Info",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/Ripe/Info",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Ripe",
-								"Info"
-							]
-						},
-						"description": "This endpoints returns Ripe info."
-					},
-					"response": []
-				},
-				{
-					"name": "Purchasers",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/Ripe/Purchasers",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Ripe",
-								"Purchasers"
-							]
-						},
-						"description": "This endpoints returns a list of the latest Ripe purchasers."
-					},
-					"response": []
-				}
-			],
-			"description": "Ripe is a subscription plan offering a number of site wide benefits.\n\nIf you want to buy Ripe, go to [https://gamebanana.com/ripe](https://gamebanana.com/ripeThis)\n\nThis folder contains Ripe specific endpoints."
-		},
-		{
 			"name": "Work in Progress",
 			"item": [
 				{
@@ -8150,6 +8106,622 @@
 					"description": "Request specific endpoints."
 				}
 			]
+		},
+		{
+			"name": "_____",
+			"item": []
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Via Username",
+					"item": [
+						{
+							"name": "Authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sUsername\": \"tester\",\r\n    \"_sPassword\": \"helloworld\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Member/Authenticate",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Member",
+										"Authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Via Email",
+					"item": [
+						{
+							"name": "1. Request confirmation code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sEmail\": \"tester@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Member/EmailAuthenticate",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Member",
+										"EmailAuthenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Submit confirmation code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sAuthCode\": \"A1B2C3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Member/EmailAuthenticate",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Member",
+										"EmailAuthenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "Like count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nLikeCount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id"
+							],
+							"query": [
+								{
+									"key": "_csvProperties",
+									"value": "_nLikeCount"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users who liked",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Likes?_nPage=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Likes"
+							],
+							"query": [
+								{
+									"key": "_nPage",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Like"
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Unlike",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Like"
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts / Replies",
+			"item": [
+				{
+					"name": "Post / Reply properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Post/:post_id/ProfilePage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Post",
+								":post_id",
+								"ProfilePage"
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "{{example_post_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nPostCount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id"
+							],
+							"query": [
+								{
+									"key": "_csvProperties",
+									"value": "_nPostCount"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts feed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Posts?_nPage=1&_nPerpage=15&_sSort=popular",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Posts"
+							],
+							"query": [
+								{
+									"key": "_nPage",
+									"value": "1"
+								},
+								{
+									"key": "_nPerpage",
+									"value": "15"
+								},
+								{
+									"key": "_sSort",
+									"value": "popular"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Add a Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Post/Add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Post",
+								"Add"
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Add a Reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/Post/:post_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Post",
+								":post_id"
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "{{example_post_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Trash a Post / Reply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Post/:post_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Post",
+								":post_id"
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "{{example_post_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Untrash a Post / Reply",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Post/:post_id/Untrash",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Post",
+								":post_id",
+								"Untrash"
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "{{example_post_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ripe",
+			"item": [
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Ripe/Info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Ripe",
+								"Info"
+							]
+						},
+						"description": "This endpoints returns Ripe info."
+					},
+					"response": []
+				},
+				{
+					"name": "Latest purchasers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Ripe/Purchasers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Ripe",
+								"Purchasers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Ripe is a subscription plan offering a number of site wide benefits.\n\nIf you want to buy Ripe, go to [https://gamebanana.com/ripe](https://gamebanana.com/ripeThis)\n\nThis folder contains Ripe specific endpoints."
+		},
+		{
+			"name": "Thanks",
+			"item": [
+				{
+					"name": "Thanks count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nThanksCount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id"
+							],
+							"query": [
+								{
+									"key": "_csvProperties",
+									"value": "_nThanksCount"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users who thanked",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Thanks?_nPage=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Thanks"
+							],
+							"query": [
+								{
+									"key": "_nPage",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Thank",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_nPointsToDonate\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/:section_slug/:submission_id/Thank/Add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								":section_slug",
+								":submission_id",
+								"Thank",
+								"Add"
+							],
+							"variable": [
+								{
+									"key": "section_slug",
+									"value": "{{slug_mods}}"
+								},
+								{
+									"key": "submission_id",
+									"value": "{{example_mod_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -8176,6 +8748,21 @@
 		{
 			"key": "base_url",
 			"value": "https://gamebanana.com/apiv11",
+			"type": "string"
+		},
+		{
+			"key": "slug_mods",
+			"value": "Mod",
+			"type": "string"
+		},
+		{
+			"key": "example_mod_id",
+			"value": "302016",
+			"type": "string"
+		},
+		{
+			"key": "example_post_id",
+			"value": "11053143",
 			"type": "string"
 		}
 	]
