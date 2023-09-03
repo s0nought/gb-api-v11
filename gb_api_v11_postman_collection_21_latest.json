@@ -5258,90 +5258,6 @@
 			"name": "Work in Progress",
 			"item": [
 				{
-					"name": "Ideas",
-					"item": []
-				},
-				{
-					"name": "Initiatives",
-					"item": []
-				},
-				{
-					"name": "Jams",
-					"item": []
-				},
-				{
-					"name": "Mods",
-					"item": []
-				},
-				{
-					"name": "Models",
-					"item": []
-				},
-				{
-					"name": "Members",
-					"item": []
-				},
-				{
-					"name": "News",
-					"item": []
-				},
-				{
-					"name": "Polls",
-					"item": []
-				},
-				{
-					"name": "Projects",
-					"item": []
-				},
-				{
-					"name": "Questions",
-					"item": []
-				},
-				{
-					"name": "Reviews",
-					"item": []
-				},
-				{
-					"name": "Requests",
-					"item": []
-				},
-				{
-					"name": "Scripts",
-					"item": []
-				},
-				{
-					"name": "Sounds",
-					"item": []
-				},
-				{
-					"name": "Sprays",
-					"item": []
-				},
-				{
-					"name": "Studios",
-					"item": []
-				},
-				{
-					"name": "Threads",
-					"item": []
-				},
-				{
-					"name": "Tools",
-					"item": []
-				},
-				{
-					"name": "Tutorials",
-					"item": []
-				},
-				{
-					"name": "Wikis",
-					"item": []
-				},
-				{
-					"name": "WiPs",
-					"item": []
-				},
-				{
 					"name": "Categories",
 					"item": [
 						{
@@ -5956,104 +5872,6 @@
 						}
 					],
 					"description": "Homepage specific endpoints."
-				},
-				{
-					"name": "Issues",
-					"item": [
-						{
-							"name": "Multiple Issues",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:sectionSlug/:submissionId/Issues",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":sectionSlug",
-										":submissionId",
-										"Issues"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "",
-											"description": "Integer. Page to get.\n\nAllowed values: >1\n\nDefault value: 1",
-											"disabled": true
-										}
-									],
-									"variable": [
-										{
-											"key": "sectionSlug",
-											"value": "",
-											"description": "Required. Section slug."
-										},
-										{
-											"key": "submissionId",
-											"value": "",
-											"description": "Required. Submission ID."
-										}
-									]
-								},
-								"description": "Returns a list of the latest issues by Submission ID."
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}/:sectionSlug/:submissionId/Issues?_nPage=1",
-											"host": [
-												"{{base_url}}"
-											],
-											"path": [
-												":sectionSlug",
-												":submissionId",
-												"Issues"
-											],
-											"query": [
-												{
-													"key": "_nPage",
-													"value": "1",
-													"description": "Integer. Page to get.\n\nAllowed values: >1\n\nDefault value: 1"
-												}
-											],
-											"variable": [
-												{
-													"key": "sectionSlug",
-													"value": "Mod",
-													"description": "Required. Section slug."
-												},
-												{
-													"key": "submissionId",
-													"value": "83692",
-													"description": "Required. Submission ID."
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"_aMetadata\": {\n        \"_nRecordCount\": 1,\n        \"_nPerpage\": 5,\n        \"_bIsComplete\": true\n    },\n    \"_aRecords\": [\n        {\n            \"_idRow\": 1236,\n            \"_tsDateAdded\": 1572181976,\n            \"_tsDateModified\": 1572183781,\n            \"_aSubmitter\": {\n                \"_idRow\": 181800,\n                \"_sName\": \"Alfa1337\",\n                \"_bIsOnline\": false,\n                \"_bHasRipe\": false,\n                \"_sProfileUrl\": \"https://gamebanana.com/members/181800\",\n                \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/57ac0dab98a4b.png\",\n                \"_aClearanceLevels\": [\n                    \"REDEMPT Manager\",\n                    \"WANTED! Manager\",\n                    \"Moderator\"\n                ],\n                \"_sHdAvatarUrl\": \"https://images.gamebanana.com/img/av/5fee0c4ee5b1b.png\"\n            },\n            \"_sText\": \"Change the light tube render mode from 'normal' to 'texture'.\",\n            \"_sState\": \"closed\",\n            \"_bIsSticky\": false,\n            \"_aCloser\": {\n                \"_idRow\": 1169455,\n                \"_sName\": \"s0nought\",\n                \"_bIsOnline\": false,\n                \"_bHasRipe\": true,\n                \"_sProfileUrl\": \"https://gamebanana.com/members/1169455\",\n                \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/5d7ded79da9e0.png\",\n                \"_sHovatarUrl\": \"https://images.gamebanana.com/img/av/64555a4584242.png\"\n            },\n            \"_tsCloseDate\": 1572183781\n        }\n    ]\n}"
-								}
-							]
-						}
-					],
-					"description": "Bug reports and other problems identified with the submission."
 				},
 				{
 					"name": "Member",
@@ -6928,176 +6746,6 @@
 						}
 					],
 					"description": "Member specific endpoints."
-				},
-				{
-					"name": "Posts",
-					"item": [
-						{
-							"name": "Single Post",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/Post/:id/ProfilePage",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Post",
-										":id",
-										"ProfilePage"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": null,
-											"description": "Required. Post ID."
-										}
-									]
-								},
-								"description": "Returns a single post by Post ID."
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}/Post/:postId/ProfilePage",
-											"host": [
-												"{{base_url}}"
-											],
-											"path": [
-												"Post",
-												":postId",
-												"ProfilePage"
-											],
-											"variable": [
-												{
-													"key": "postId",
-													"value": "10894492",
-													"description": "Required. Post ID."
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"_idRow\": 10894492,\n    \"_nStatus\": \"0\",\n    \"_tsDateAdded\": 1687207104,\n    \"_tsDateModified\": 0,\n    \"_nReplyCount\": 2,\n    \"_iPinLevel\": 0,\n    \"_nStampScore\": 2,\n    \"_aPreviewMedia\": {\n        \"_aImages\": []\n    },\n    \"_aLabels\": [\n        \"Submitter\"\n    ],\n    \"_sText\": \"<p><a href=\\\"https://gamebanana.com/members/1734849\\\">mailmanmickey</a> <a href=\\\"https://gamebanana.com/members/1724952\\\">Tjoc55</a> <a href=\\\"https://gamebanana.com/members/1363142\\\">M1KU</a> <a href=\\\"https://gamebanana.com/members/1757245\\\">MrBerry</a></p><p>hey pals check this out >:D</p>\",\n    \"_aPoster\": {\n        \"_idRow\": 1169455,\n        \"_sName\": \"s0nought\",\n        \"_bIsOnline\": false,\n        \"_bHasRipe\": true,\n        \"_sProfileUrl\": \"https://gamebanana.com/members/1169455\",\n        \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/5d7ded79da9e0.png\",\n        \"_sHovatarUrl\": \"https://images.gamebanana.com/img/av/64555a4584242.png\",\n        \"_sUserTitle\": \"Invincible\",\n        \"_sHonoraryTitle\": \"Dev Tester Extraordinaire\",\n        \"_sSigUrl\": \"\"\n    },\n    \"_aStamps\": [\n        {\n            \"_sUnlockName\": \"good_idea_stamp\",\n            \"_sTitle\": \"Good Idea\",\n            \"_sIconClasses\": \"StampIcon GoodIdeaIcon\",\n            \"_sCategory\": \"positive\",\n            \"_nCount\": 2\n        },\n        {\n            \"_sTitle\": \"Helpful\",\n            \"_sIconClasses\": \"StampIcon HelpfulIcon\",\n            \"_sCategory\": \"positive\",\n            \"_nCount\": 2\n        }\n    ],\n    \"_aReplies\": {\n        \"_aMetadata\": {\n            \"_nRecordCount\": 2,\n            \"_nPerpage\": 15,\n            \"_bIsComplete\": true\n        },\n        \"_aRecords\": [\n            {\n                \"_idRow\": 10910052,\n                \"_nStatus\": \"0\",\n                \"_tsDateAdded\": 1687310125,\n                \"_tsDateModified\": 0,\n                \"_nReplyCount\": 0,\n                \"_iPinLevel\": 0,\n                \"_nStampScore\": 0,\n                \"_aPreviewMedia\": {\n                    \"_aImages\": []\n                },\n                \"_idParentPostRow\": 10894492,\n                \"_sText\": \"<p>nice.</p>\",\n                \"_aPoster\": {\n                    \"_idRow\": 1734849,\n                    \"_sName\": \"Ghost1734849\",\n                    \"_bIsOnline\": false,\n                    \"_bHasRipe\": false,\n                    \"_sProfileUrl\": \"https://gamebanana.com/members/1734849\",\n                    \"_sAvatarUrl\": \"https://images.gamebanana.com/static/img/defaults/avatar.gif\",\n                    \"_sSubjectShaperCssCode\": \"color:#A0C56C;\",\n                    \"_sUserTitle\": \"\",\n                    \"_sHonoraryTitle\": \"\",\n                    \"_sSigUrl\": \"\"\n                },\n                \"_aStamps\": [\n                    {\n                        \"_sUnlockName\": \"cheers_stamp\",\n                        \"_sTitle\": \"Cheers\",\n                        \"_sIconClasses\": \"StampIcon CheersIcon\",\n                        \"_sCategory\": \"positive\",\n                        \"_nCount\": 1\n                    }\n                ]\n            },\n            {\n                \"_idRow\": 10908623,\n                \"_nStatus\": \"0\",\n                \"_tsDateAdded\": 1687268698,\n                \"_tsDateModified\": 0,\n                \"_nReplyCount\": 0,\n                \"_iPinLevel\": 0,\n                \"_nStampScore\": 0,\n                \"_aPreviewMedia\": {\n                    \"_aImages\": []\n                },\n                \"_idParentPostRow\": 10894492,\n                \"_sText\": \"<p>Cool.</p><img src=\\\"https://64.media.tumblr.com/741d46ac870d39c3e9060dcfdf2e00ae/tumblr_o0q4jeYdn01qc9dlro1_500.gif\\\">\",\n                \"_aPoster\": {\n                    \"_idRow\": 1724952,\n                    \"_sName\": \"Tjoc55\",\n                    \"_bIsOnline\": false,\n                    \"_bHasRipe\": false,\n                    \"_sProfileUrl\": \"https://gamebanana.com/members/1724952\",\n                    \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/6494637c45ece.jpg\",\n                    \"_sHdAvatarUrl\": \"https://images.gamebanana.com/img/av/6494636b0ee40.jpg\",\n                    \"_sUpicUrl\": \"https://images.gamebanana.com/img/upic/60e866d4c0a4f.png\",\n                    \"_sUserTitle\": \"\",\n                    \"_sHonoraryTitle\": \"\",\n                    \"_sSigUrl\": \"https://images.gamebanana.com/img/sig/60a7e8868bdc9.jpg\"\n                },\n                \"_aStamps\": [\n                    {\n                        \"_sUnlockName\": \"cheers_stamp\",\n                        \"_sTitle\": \"Cheers\",\n                        \"_sIconClasses\": \"StampIcon CheersIcon\",\n                        \"_sCategory\": \"positive\",\n                        \"_nCount\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Multiple Posts",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:sectionSlug/:submissionId/Posts",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":sectionSlug",
-										":submissionId",
-										"Posts"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "",
-											"description": "Integer. Page to get.\n\nAllowed values: >1\n\nDefault value: 1",
-											"disabled": true
-										},
-										{
-											"key": "_sSort",
-											"value": "",
-											"description": "String. How to sort the posts.\n\nAllowed values: popular, newest\n\nDefault value: popular",
-											"disabled": true
-										}
-									],
-									"variable": [
-										{
-											"key": "sectionSlug",
-											"value": "",
-											"description": "Required. Section slug."
-										},
-										{
-											"key": "submissionId",
-											"value": "",
-											"description": "Required. Submission ID."
-										}
-									]
-								},
-								"description": "Returns a list of the latest posts by Submission ID."
-							},
-							"response": [
-								{
-									"name": "200 OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}/:sectionSlug/:submissionId/Posts?_nPage=1&_sSort=popular",
-											"host": [
-												"{{base_url}}"
-											],
-											"path": [
-												":sectionSlug",
-												":submissionId",
-												"Posts"
-											],
-											"query": [
-												{
-													"key": "_nPage",
-													"value": "1",
-													"description": "Integer. Page to get.\n\nAllowed values: >1\n\nDefault value: 1"
-												},
-												{
-													"key": "_sSort",
-													"value": "popular",
-													"description": "String. How to sort the posts.\n\nAllowed values: popular, newest\n\nDefault value: popular"
-												}
-											],
-											"variable": [
-												{
-													"key": "sectionSlug",
-													"value": "Script",
-													"description": "Required. Section slug."
-												},
-												{
-													"key": "submissionId",
-													"value": "11642",
-													"description": "Required. Submission ID."
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"_aMetadata\": {\n        \"_nRecordCount\": 3,\n        \"_nPerpage\": 15,\n        \"_bIsComplete\": true\n    },\n    \"_aRecords\": [\n        {\n            \"_idRow\": 10894492,\n            \"_nStatus\": \"0\",\n            \"_tsDateAdded\": 1687207104,\n            \"_tsDateModified\": 0,\n            \"_nReplyCount\": 2,\n            \"_iPinLevel\": 0,\n            \"_nStampScore\": 2,\n            \"_aPreviewMedia\": {\n                \"_aImages\": []\n            },\n            \"_aLabels\": [\n                \"Submitter\"\n            ],\n            \"_sText\": \"<p><a href=\\\"https://gamebanana.com/members/1734849\\\">mailmanmickey</a> <a href=\\\"https://gamebanana.com/members/1724952\\\">Tjoc55</a> <a href=\\\"https://gamebanana.com/members/1363142\\\">M1KU</a> <a href=\\\"https://gamebanana.com/members/1757245\\\">MrBerry</a></p><p>hey pals check this out >:D</p>\",\n            \"_aPoster\": {\n                \"_idRow\": 1169455,\n                \"_sName\": \"s0nought\",\n                \"_bIsOnline\": false,\n                \"_bHasRipe\": true,\n                \"_sProfileUrl\": \"https://gamebanana.com/members/1169455\",\n                \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/5d7ded79da9e0.png\",\n                \"_sHovatarUrl\": \"https://images.gamebanana.com/img/av/64555a4584242.png\",\n                \"_sUserTitle\": \"Invincible\",\n                \"_sHonoraryTitle\": \"Dev Tester Extraordinaire\",\n                \"_sSigUrl\": \"\"\n            },\n            \"_aStamps\": [\n                {\n                    \"_sUnlockName\": \"good_idea_stamp\",\n                    \"_sTitle\": \"Good Idea\",\n                    \"_sIconClasses\": \"StampIcon GoodIdeaIcon\",\n                    \"_sCategory\": \"positive\",\n                    \"_nCount\": 2\n                },\n                {\n                    \"_sTitle\": \"Helpful\",\n                    \"_sIconClasses\": \"StampIcon HelpfulIcon\",\n                    \"_sCategory\": \"positive\",\n                    \"_nCount\": 2\n                }\n            ]\n        },\n        {\n            \"_idRow\": 10970604,\n            \"_nStatus\": \"0\",\n            \"_tsDateAdded\": 1689499651,\n            \"_tsDateModified\": 0,\n            \"_nReplyCount\": 1,\n            \"_iPinLevel\": 0,\n            \"_nStampScore\": 0,\n            \"_aPreviewMedia\": {\n                \"_aImages\": []\n            },\n            \"_sText\": \"<p>Any way to make this work for the \\\"featured\\\" mods (Today's Pick, Best of the Banana, etc.)?</p>\",\n            \"_aPoster\": {\n                \"_idRow\": 1500522,\n                \"_sName\": \"SphericalCube\",\n                \"_bIsOnline\": false,\n                \"_bHasRipe\": false,\n                \"_sProfileUrl\": \"https://gamebanana.com/members/1500522\",\n                \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/62cff8929c665.gif\",\n                \"_sHdAvatarUrl\": \"https://images.gamebanana.com/img/av/62cffc65943ad.png\",\n                \"_sUpicUrl\": \"https://images.gamebanana.com/img/upic/606c985b07769.png\",\n                \"_sSubjectShaperCssCode\": \"font-family:'Courier New','monospace';color:#FFF;text-shadow:0px 0px 3px #1D2954;\",\n                \"_sUserTitle\": \"No data for this floor.\",\n                \"_sHonoraryTitle\": \"\",\n                \"_sSigUrl\": \"https://images.gamebanana.com/img/sig/5e2da2d781b7b.png\"\n            }\n        },\n        {\n            \"_idRow\": 10912732,\n            \"_nStatus\": \"0\",\n            \"_tsDateAdded\": 1687407972,\n            \"_tsDateModified\": 0,\n            \"_nReplyCount\": 0,\n            \"_iPinLevel\": 0,\n            \"_nStampScore\": 0,\n            \"_aPreviewMedia\": {\n                \"_aImages\": []\n            },\n            \"_sText\": \"<p>I feel like that CHOCOLATE!!! fish from Spongebob.</p><p>ffffffffffffffffffff, FINALLY </p><p>Legendary work my guy.</p>\",\n            \"_aPoster\": {\n                \"_idRow\": 1757245,\n                \"_sName\": \"MrBerry\",\n                \"_bIsOnline\": false,\n                \"_bHasRipe\": true,\n                \"_sProfileUrl\": \"https://gamebanana.com/members/1757245\",\n                \"_sAvatarUrl\": \"https://images.gamebanana.com/img/av/649d6dec1f800.gif\",\n                \"_aClearanceLevels\": [\n                    \"MK8 Manager\"\n                ],\n                \"_sHdAvatarUrl\": \"https://images.gamebanana.com/img/av/649d6df565ce9.gif\",\n                \"_sUpicUrl\": \"https://images.gamebanana.com/img/upic/648d6d7cc2b37.gif\",\n                \"_sSubjectShaperCssCode\": \"font-family:'Arial Black','Gadget','sans-serif';color:#222;text-shadow:-1px -1px 0 #FFF,1px -1px 0 #FFF,-1px 1px 0 #FFF,1px 1px 0 #FFF;\",\n                \"_sUserTitle\": \"He mods in Mysterious ways...\",\n                \"_sHonoraryTitle\": \"\",\n                \"_sSigUrl\": \"https://images.gamebanana.com/img/sig/607e92acc5daf.gif\"\n            },\n            \"_aStamps\": [\n                {\n                    \"_sUnlockName\": \"cheers_stamp\",\n                    \"_sTitle\": \"Cheers\",\n                    \"_sIconClasses\": \"StampIcon CheersIcon\",\n                    \"_sCategory\": \"positive\",\n                    \"_nCount\": 1\n                }\n            ]\n        }\n    ]\n}"
-								}
-							]
-						}
-					],
-					"description": "Feedback and comments identified with the submission."
 				},
 				{
 					"name": "_Collection",
@@ -8208,366 +7856,6 @@
 			]
 		},
 		{
-			"name": "Likes",
-			"item": [
-				{
-					"name": "Like count",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nLikeCount",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id"
-							],
-							"query": [
-								{
-									"key": "_csvProperties",
-									"value": "_nLikeCount"
-								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Users who liked",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Likes?_nPage=1",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Likes"
-							],
-							"query": [
-								{
-									"key": "_nPage",
-									"value": "1"
-								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Like",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Like",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Like"
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Unlike",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Like",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Like"
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Posts / Replies",
-			"item": [
-				{
-					"name": "Post / Reply properties",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/Post/:post_id/ProfilePage",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Post",
-								":post_id",
-								"ProfilePage"
-							],
-							"variable": [
-								{
-									"key": "post_id",
-									"value": "{{example_post_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Posts count",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nPostCount",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id"
-							],
-							"query": [
-								{
-									"key": "_csvProperties",
-									"value": "_nPostCount"
-								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Posts feed",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Posts?_nPage=1&_nPerpage=15&_sSort=popular",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Posts"
-							],
-							"query": [
-								{
-									"key": "_nPage",
-									"value": "1"
-								},
-								{
-									"key": "_nPerpage",
-									"value": "15"
-								},
-								{
-									"key": "_sSort",
-									"value": "popular"
-								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Add a Post",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Post/Add",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Post",
-								"Add"
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Add a Reply",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/Post/:post_id",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Post",
-								":post_id"
-							],
-							"variable": [
-								{
-									"key": "post_id",
-									"value": "{{example_post_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Trash a Post / Reply",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/Post/:post_id",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Post",
-								":post_id"
-							],
-							"variable": [
-								{
-									"key": "post_id",
-									"value": "{{example_post_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Untrash a Post / Reply",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/Post/:post_id/Untrash",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"Post",
-								":post_id",
-								"Untrash"
-							],
-							"variable": [
-								{
-									"key": "post_id",
-									"value": "{{example_post_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Ripe",
 			"item": [
 				{
@@ -8611,115 +7899,616 @@
 			"description": "Ripe is a subscription plan offering a number of site wide benefits.\n\nIf you want to buy Ripe, go to [https://gamebanana.com/ripe](https://gamebanana.com/ripeThis)\n\nThis folder contains Ripe specific endpoints."
 		},
 		{
-			"name": "Thanks",
+			"name": "Submission",
 			"item": [
 				{
-					"name": "Thanks count",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nThanksCount",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id"
-							],
-							"query": [
-								{
-									"key": "_csvProperties",
-									"value": "_nThanksCount"
+					"name": "Issues",
+					"item": [
+						{
+							"name": "Issues list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Issues?_nPage=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Issues"
+									],
+									"query": [
+										{
+											"key": "_nPage",
+											"value": "1"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
 								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Users who thanked",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Thanks?_nPage=1",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Thanks"
-							],
-							"query": [
-								{
-									"key": "_nPage",
-									"value": "1"
-								}
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
-								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "[Auth] Thank",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"_nPointsToDonate\": 10\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{base_url}}/:section_slug/:submission_id/Thank/Add",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								":section_slug",
-								":submission_id",
-								"Thank",
-								"Add"
-							],
-							"variable": [
-								{
-									"key": "section_slug",
-									"value": "{{slug_mods}}"
+						{
+							"name": "[Auth] Add an Issue",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sState\": \"open\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "submission_id",
-									"value": "{{example_mod_id}}"
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Issue/Add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Issue",
+										"Add"
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Edit an Issue",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sState\": \"closed\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Issue/:issue_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Issue",
+										":issue_id"
+									],
+									"variable": [
+										{
+											"key": "issue_id",
+											"value": "{{example_issue_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Trash an Issue",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/Issue/:issue_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Issue",
+										":issue_id"
+									],
+									"variable": [
+										{
+											"key": "issue_id",
+											"value": "{{example_issue_id}}"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "Likes",
+					"item": [
+						{
+							"name": "Like count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nLikeCount",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id"
+									],
+									"query": [
+										{
+											"key": "_csvProperties",
+											"value": "_nLikeCount"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Users who liked",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Likes?_nPage=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Likes"
+									],
+									"query": [
+										{
+											"key": "_nPage",
+											"value": "1"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Like",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Like"
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Unlike",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Like"
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Posts / Replies",
+					"item": [
+						{
+							"name": "Post / Reply properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/Post/:post_id/ProfilePage",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Post",
+										":post_id",
+										"ProfilePage"
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "{{example_post_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Posts count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nPostCount",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id"
+									],
+									"query": [
+										{
+											"key": "_csvProperties",
+											"value": "_nPostCount"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Posts feed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Posts?_nPage=1&_nPerpage=15&_sSort=popular",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Posts"
+									],
+									"query": [
+										{
+											"key": "_nPage",
+											"value": "1"
+										},
+										{
+											"key": "_nPerpage",
+											"value": "15"
+										},
+										{
+											"key": "_sSort",
+											"value": "popular"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Add a Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Post/Add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Post",
+										"Add"
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Add a Reply",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Post/:post_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Post",
+										":post_id"
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "{{example_post_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Trash a Post / Reply",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/Post/:post_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Post",
+										":post_id"
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "{{example_post_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Untrash a Post / Reply",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/Post/:post_id/Untrash",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Post",
+										":post_id",
+										"Untrash"
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "{{example_post_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Thanks",
+					"item": [
+						{
+							"name": "Thanks count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nThanksCount",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id"
+									],
+									"query": [
+										{
+											"key": "_csvProperties",
+											"value": "_nThanksCount"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Users who thanked",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Thanks?_nPage=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Thanks"
+									],
+									"query": [
+										{
+											"key": "_nPage",
+											"value": "1"
+										}
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[Auth] Thank",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_nPointsToDonate\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/:section_slug/:submission_id/Thank/Add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										":section_slug",
+										":submission_id",
+										"Thank",
+										"Add"
+									],
+									"variable": [
+										{
+											"key": "section_slug",
+											"value": "{{slug_mods}}"
+										},
+										{
+											"key": "submission_id",
+											"value": "{{example_mod_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
@@ -8763,6 +8552,11 @@
 		{
 			"key": "example_post_id",
 			"value": "11053143",
+			"type": "string"
+		},
+		{
+			"key": "example_issue_id",
+			"value": "11640",
 			"type": "string"
 		}
 	]
