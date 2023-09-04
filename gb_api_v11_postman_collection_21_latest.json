@@ -7756,10 +7756,6 @@
 			]
 		},
 		{
-			"name": "_____",
-			"item": []
-		},
-		{
 			"name": "Authentication",
 			"item": [
 				{
@@ -7856,6 +7852,1017 @@
 			]
 		},
 		{
+			"name": "Dictionaries",
+			"item": [
+				{
+					"name": "Trash reasons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/Util/Config/TrashReasons",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Util",
+								"Config",
+								"TrashReasons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Submission",
+			"item": [
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "Issues",
+							"item": [
+								{
+									"name": "Issues list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Issues?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Issues"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add an Issue",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sState\": \"open\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Issue/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Issue",
+												"Add"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Edit an Issue",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sState\": \"closed\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Issue/:issue_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Issue",
+												":issue_id"
+											],
+											"variable": [
+												{
+													"key": "issue_id",
+													"value": "{{example_issue_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Trash an Issue",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Issue/:issue_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Issue",
+												":issue_id"
+											],
+											"variable": [
+												{
+													"key": "issue_id",
+													"value": "{{example_issue_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Likes",
+							"item": [
+								{
+									"name": "Like count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nLikeCount",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_nLikeCount"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Users who liked",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Likes?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Likes"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Like",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Like"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Unlike",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Like",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Like"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Posts / Replies",
+							"item": [
+								{
+									"name": "Post / Reply properties",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Post/:post_id/ProfilePage",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Post",
+												":post_id",
+												"ProfilePage"
+											],
+											"variable": [
+												{
+													"key": "post_id",
+													"value": "{{example_post_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Posts count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nPostCount",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_nPostCount"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Posts feed",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Posts?_nPage=1&_nPerpage=15&_sSort=popular",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Posts"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												},
+												{
+													"key": "_nPerpage",
+													"value": "15"
+												},
+												{
+													"key": "_sSort",
+													"value": "popular"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add a Post",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Post/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Post",
+												"Add"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add a Reply",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Post/:post_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Post",
+												":post_id"
+											],
+											"variable": [
+												{
+													"key": "post_id",
+													"value": "{{example_post_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Trash a Post / Reply",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Post/:post_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Post",
+												":post_id"
+											],
+											"variable": [
+												{
+													"key": "post_id",
+													"value": "{{example_post_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Untrash a Post / Reply",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Post/:post_id/Untrash",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Post",
+												":post_id",
+												"Untrash"
+											],
+											"variable": [
+												{
+													"key": "post_id",
+													"value": "{{example_post_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Subscription",
+							"item": [
+								{
+									"name": "Subscribers count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nSubscriberCount",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_nSubscriberCount"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Users who subscribed",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Subscribers?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Subscribers"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Subscribe",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Subscription/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Subscription",
+												"Add"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Unsubscribe",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Subscription/:subscription_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Subscription",
+												":subscription_id"
+											],
+											"variable": [
+												{
+													"key": "subscription_id",
+													"value": "{{example_subscription_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Thanks",
+							"item": [
+								{
+									"name": "Thanks count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nThanksCount",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_nThanksCount"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Users who thanked",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Thanks?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Thanks"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Thank",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_nPointsToDonate\": 10\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Thank/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Thank",
+												"Add"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Updates",
+							"item": [
+								{
+									"name": "Updates count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nUpdatesCount",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_nUpdatesCount"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Updates list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Updates?_nPage=1&_nPerpage=10",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Updates"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												},
+												{
+													"key": "_nPerpage",
+													"value": "10"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Files",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Files",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Files"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add an Update",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_aChangeLog\": [\r\n        {\r\n            \"text\": \"Add Eliteness\",\r\n            \"cat\": \"Addition\"\r\n        }\r\n    ],\r\n    \"_aFileRowIds\": [\r\n        610939\r\n    ],\r\n    \"_sName\": \"Test\",\r\n    \"_sVersion\": \"1.337\",\r\n    \"_sText\": \"<p>Added Eliteness</p>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Update",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Update"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Edit an Update",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Update/:update_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Update",
+												":update_id"
+											],
+											"variable": [
+												{
+													"key": "update_id",
+													"value": "{{example_update_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Trash an Update",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_idReasonRow\": \"1\",\r\n    \"_bHideReason\": true,\r\n    \"_sNotes\": \"<p>Hidden</p>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Update/:update_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Update",
+												":update_id"
+											],
+											"variable": [
+												{
+													"key": "update_id",
+													"value": "{{example_issue_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Untrash an Update",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sNotes\": \"<p>No reason</p>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Update/:update_id/Untrash",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Update",
+												":update_id",
+												"Untrash"
+											],
+											"variable": [
+												{
+													"key": "update_id",
+													"value": "{{example_update_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Multiple",
+					"item": []
+				}
+			]
+		},
+		{
 			"name": "Ripe",
 			"item": [
 				{
@@ -7897,620 +8904,6 @@
 				}
 			],
 			"description": "Ripe is a subscription plan offering a number of site wide benefits.\n\nIf you want to buy Ripe, go to [https://gamebanana.com/ripe](https://gamebanana.com/ripeThis)\n\nThis folder contains Ripe specific endpoints."
-		},
-		{
-			"name": "Submission",
-			"item": [
-				{
-					"name": "Issues",
-					"item": [
-						{
-							"name": "Issues list",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Issues?_nPage=1",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Issues"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "1"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Add an Issue",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"_sState\": \"open\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": true\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Issue/Add",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Issue",
-										"Add"
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Edit an Issue",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"_sState\": \"closed\",\r\n    \"_sText\": \"This is a test.\",\r\n    \"_bIsSticky\": false\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/Issue/:issue_id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Issue",
-										":issue_id"
-									],
-									"variable": [
-										{
-											"key": "issue_id",
-											"value": "{{example_issue_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Trash an Issue",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/Issue/:issue_id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Issue",
-										":issue_id"
-									],
-									"variable": [
-										{
-											"key": "issue_id",
-											"value": "{{example_issue_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Likes",
-					"item": [
-						{
-							"name": "Like count",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nLikeCount",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id"
-									],
-									"query": [
-										{
-											"key": "_csvProperties",
-											"value": "_nLikeCount"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Users who liked",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Likes?_nPage=1",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Likes"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "1"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Like",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Like",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Like"
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Unlike",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Like",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Like"
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Posts / Replies",
-					"item": [
-						{
-							"name": "Post / Reply properties",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/Post/:post_id/ProfilePage",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Post",
-										":post_id",
-										"ProfilePage"
-									],
-									"variable": [
-										{
-											"key": "post_id",
-											"value": "{{example_post_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Posts count",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nPostCount",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id"
-									],
-									"query": [
-										{
-											"key": "_csvProperties",
-											"value": "_nPostCount"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Posts feed",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Posts?_nPage=1&_nPerpage=15&_sSort=popular",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Posts"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "1"
-										},
-										{
-											"key": "_nPerpage",
-											"value": "15"
-										},
-										{
-											"key": "_sSort",
-											"value": "popular"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Add a Post",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Post/Add",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Post",
-										"Add"
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Add a Reply",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"_sText\": \"<p>This is a test.</p>\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/Post/:post_id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Post",
-										":post_id"
-									],
-									"variable": [
-										{
-											"key": "post_id",
-											"value": "{{example_post_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Trash a Post / Reply",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/Post/:post_id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Post",
-										":post_id"
-									],
-									"variable": [
-										{
-											"key": "post_id",
-											"value": "{{example_post_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Untrash a Post / Reply",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/Post/:post_id/Untrash",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"Post",
-										":post_id",
-										"Untrash"
-									],
-									"variable": [
-										{
-											"key": "post_id",
-											"value": "{{example_post_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Thanks",
-					"item": [
-						{
-							"name": "Thanks count",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_nThanksCount",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id"
-									],
-									"query": [
-										{
-											"key": "_csvProperties",
-											"value": "_nThanksCount"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Users who thanked",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Thanks?_nPage=1",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Thanks"
-									],
-									"query": [
-										{
-											"key": "_nPage",
-											"value": "1"
-										}
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "[Auth] Thank",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"_nPointsToDonate\": 10\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/:section_slug/:submission_id/Thank/Add",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										":section_slug",
-										":submission_id",
-										"Thank",
-										"Add"
-									],
-									"variable": [
-										{
-											"key": "section_slug",
-											"value": "{{slug_mods}}"
-										},
-										{
-											"key": "submission_id",
-											"value": "{{example_mod_id}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
 		}
 	],
 	"event": [
@@ -8557,6 +8950,16 @@
 		{
 			"key": "example_issue_id",
 			"value": "11640",
+			"type": "string"
+		},
+		{
+			"key": "example_subscription_id",
+			"value": "1810812",
+			"type": "string"
+		},
+		{
+			"key": "example_update_id",
+			"value": "91881",
 			"type": "string"
 		}
 	]
