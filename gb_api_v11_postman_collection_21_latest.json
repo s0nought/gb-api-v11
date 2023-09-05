@@ -7882,6 +7882,40 @@
 					"name": "Single",
 					"item": [
 						{
+							"name": "Embeds",
+							"item": [
+								{
+									"name": "Embeds list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/EmbeddablesPage",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"EmbeddablesPage"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
 							"name": "Issues",
 							"item": [
 								{
@@ -8619,6 +8653,178 @@
 							]
 						},
 						{
+							"name": "Todos",
+							"item": [
+								{
+									"name": "Todos list",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Todos?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Todos"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add a Todo",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_nCompletion\": 42,\r\n    \"_nPriority\": 2,\r\n    \"_sText\": \"Be cool\",\r\n    \"_bIsSticky\": true,\r\n    \"_dsDeadline\": \"2023-09-07\",\r\n    \"_sColor\": \"#ffffff\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Todo/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Todo",
+												"Add"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Edit a Todo",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_nCompletion\": 99,\r\n    \"_nPriority\": 3,\r\n    \"_sText\": \"Be cool\",\r\n    \"_bIsSticky\": false,\r\n    \"_dsDeadline\": \"2023-09-07\",\r\n    \"_sColor\": \"#ffffff\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Todo/:todo_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Todo",
+												":todo_id"
+											],
+											"variable": [
+												{
+													"key": "todo_id",
+													"value": "{{example_todo_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Toggle state",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Todo/:todo_id/Toggle",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Todo",
+												":todo_id",
+												"Toggle"
+											],
+											"variable": [
+												{
+													"key": "todo_id",
+													"value": "{{example_todo_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Trash a Todo",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/Todo/:todo_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Todo",
+												":todo_id"
+											],
+											"variable": [
+												{
+													"key": "todo_id",
+													"value": "{{example_todo_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
 							"name": "Updates",
 							"item": [
 								{
@@ -8960,6 +9166,11 @@
 		{
 			"key": "example_update_id",
 			"value": "91881",
+			"type": "string"
+		},
+		{
+			"key": "example_todo_id",
+			"value": "92432",
 			"type": "string"
 		}
 	]
