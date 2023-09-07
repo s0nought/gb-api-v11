@@ -7882,6 +7882,178 @@
 					"name": "Single",
 					"item": [
 						{
+							"name": "Collections",
+							"item": [
+								{
+									"name": "Collections added to",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/Collections?_nPage=1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"Collections"
+											],
+											"query": [
+												{
+													"key": "_nPage",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Accessor collections",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/AccessorCollections",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"AccessorCollections"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Create a Collection",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_sName\": \"my-test-collection\",\r\n    \"_bIsPrivate\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Collection/Add",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Collection",
+												"Add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Add to Collection",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_idCollectionRow\": 310\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/AddToCollection",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"AddToCollection"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "[Auth] Remove from Collection",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_idCollectionRow\": 310\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/RemoveFromCollection",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"RemoveFromCollection"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
 							"name": "Embeds",
 							"item": [
 								{
