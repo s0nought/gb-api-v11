@@ -7882,6 +7882,166 @@
 					"name": "Single",
 					"item": [
 						{
+							"name": "Properties",
+							"item": [
+								{
+									"name": "Multiple Properties (Option 1)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=@gbprofile",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "@gbprofile"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Multiple Properties (Option 2)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/ProfilePage",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"ProfilePage"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Files",
+							"item": [
+								{
+									"name": "Files list (Option 1)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id?_csvProperties=_aFiles",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id"
+											],
+											"query": [
+												{
+													"key": "_csvProperties",
+													"value": "_aFiles"
+												}
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Files list (Option 2)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/:section_slug/:submission_id/DownloadPage",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												":section_slug",
+												":submission_id",
+												"DownloadPage"
+											],
+											"variable": [
+												{
+													"key": "section_slug",
+													"value": "{{slug_mods}}"
+												},
+												{
+													"key": "submission_id",
+													"value": "{{example_mod_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "File contents",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/File/:file_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"File",
+												":file_id"
+											],
+											"variable": [
+												{
+													"key": "file_id",
+													"value": "{{example_file_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
 							"name": "Collections",
 							"item": [
 								{
@@ -9343,6 +9503,11 @@
 		{
 			"key": "example_todo_id",
 			"value": "92432",
+			"type": "string"
+		},
+		{
+			"key": "example_file_id",
+			"value": "610939",
 			"type": "string"
 		}
 	]
